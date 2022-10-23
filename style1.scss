@@ -1,0 +1,63 @@
+
+$Font-stack: Helvetica , sans-serif;
+$primary-color: #f00;
+
+// Functions
+@mixin transformers($property) {
+    -webkit-transform: $property;
+    -ms-transform: $property;
+    transform: $property;
+}
+
+// Nesting
+body{
+    font: 100% $Font-stack;
+    color: $primary-color;
+    .box {
+        @include transformers(rotate(180deg))
+    }
+}
+
+// Inheritance
+%message-shared {
+    border: 1px solid #ccc;
+    padding: 10px*5; // Operators
+    color: #ccc;
+}
+
+.box {
+    @extend %message-shared;
+}
+
+// Conditionals
+
+@mixin somefunction($size, $color, $direction){
+    height: 0;
+    width: 0;
+    padding: 20px;
+    border: transparent solid $size/2;
+
+    @if $direction == up {
+        border-top-color: cyan;
+    }
+    @else if $direction == down {
+        border-bottom-color: cyan;
+    }
+    @else if $direction == left {
+        border-left-color: cyan;
+    }
+    @else if $direction == right {
+        border-right-color: cyan;
+      }  
+    @else{
+        @error "WTF";
+    }
+}
+
+.next{
+    @include somefunction(5px,orange ,right )
+}
+
+
+
+

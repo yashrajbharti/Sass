@@ -1,0 +1,24 @@
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #f00;
+}
+
+body .box {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.box {
+  border: 1px solid #ccc;
+  padding: 50px;
+  color: #ccc;
+}
+
+.next {
+  height: 0;
+  width: 0;
+  padding: 20px;
+  border: transparent solid 2.5px;
+  border-right-color: cyan;
+}
+/*# sourceMappingURL=style1.css.map */
